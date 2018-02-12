@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Sushi Place",
+    "dishes": [
+      { "id": 11, "name": "California Roll" },
+      { "id": 12, "name": "Rainbow Roll" },
+      { "id": 13, "name": "Spider Roll" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Thai Place",
+    "dishes": [
+      { "id": 21, "name": "Panang Curry" },
+      { "id": 22, "name": "Sing Chow Men" },
+      { "id": 23, "name": "Cantonese Noodle" }
+    ]
+  }
+]
