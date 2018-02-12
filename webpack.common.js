@@ -24,6 +24,9 @@ module.exports = {
               ['env', {'modules': false}],
               'react',
             ],
+            plugins: [
+              'syntax-dynamic-import',
+            ],
           },
         },
       },
