@@ -20,6 +20,9 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
     }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
     }),
