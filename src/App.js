@@ -4,7 +4,7 @@ import RestaurantList from './RestaurantList';
 import restaurants from './restaurants.json';
 
 const AsyncRestaurantDetail = Loadable({
-  loader: () => import('./RestaurantDetail'),
+  loader: () => import(/* webpackChunkName: "RestaurantDetail" */ './RestaurantDetail'),
   loading: () => <p>Loading…</p>,
 });
 
