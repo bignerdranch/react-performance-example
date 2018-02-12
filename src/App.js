@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
+import Loadable from 'react-loadable';
 import RestaurantList from './RestaurantList';
-import RestaurantDetail from './RestaurantDetail';
 import restaurants from './restaurants.json';
+
+const AsyncRestaurantDetail = Loadable({
+  loader: () => import('./RestaurantDetail'),
+  loading: () => <p>Loading…</p>,
+});
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +31,7 @@ class App extends Component {
     return (
       <div>
         { selectedRestaurant
-          ? <RestaurantDetail
+          ? <AsyncRestaurantDetail
               restaurant={selectedRestaurant}
               onBack={() => this.handleBack()}
             />
