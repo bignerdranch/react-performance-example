@@ -9,9 +9,23 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'My React App',
+      template: path.resolve(__dirname, 'src/index.html'),
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env', 'react'],
+          },
+        },
+      },
+    ],
+  },
   devServer: {
     contentBase: './dist',
   },
