@@ -7,3 +7,7 @@ A simple React Webpack build setup to demonstrate performance improvement tips.
 - `npm install`
 - Dev server: `npm start`
 - Production build: `npm build`
+
+## License
+
+MIT
