@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Heading = ({children}) =>
-  <h1 class="myheading">{headingCase(children)}</h1>;
+  <h1 className="myheading">{headingCase(children)}</h1>;
 
 const Subheading = ({children}) =>
-  <h2 class="mysubheading">{subheadingCase(children)}</h2>;
+  <h2 className="mysubheading">{subheadingCase(children)}</h2>;
 
 function headingCase(text) {
   console.log('converting to heading case');
