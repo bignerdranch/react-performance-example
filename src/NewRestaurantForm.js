@@ -8,6 +8,11 @@ export default class NewRestaurantForm extends Component {
           type="text"
           data-test="newRestaurantName"
         />
+        <button
+          data-test="saveButton"
+        >
+          Add Restaurant
+        </button>
       </div>
     );
   }
