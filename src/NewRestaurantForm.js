@@ -14,6 +14,11 @@ export default class NewRestaurantForm extends Component {
   }
 
   handleClick() {
+    const { onSave } = this.props;
+    const { newRestaurantName } = this.state;
+
+    onSave(newRestaurantName);
+
     this.setState({ newRestaurantName: '' });
   }
 
