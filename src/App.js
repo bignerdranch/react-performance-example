@@ -8,12 +8,7 @@ class App extends Component {
 
     this.state = {
       restaurants: restaurants,
-      newRestaurantName: '',
     };
-  }
-
-  updateRestaurantName(event) {
-    this.setState({ newRestaurantName: event.target.value });
   }
 
   addRestaurant(newRestaurantName) {
@@ -22,12 +17,11 @@ class App extends Component {
     const updatedRestaurants = [newRestaurant, ...restaurants];
     this.setState({
       restaurants: updatedRestaurants,
-      newRestaurantName: '',
     });
   }
 
   render() {
-    const { restaurants, newRestaurantName } = this.state;
+    const { restaurants } = this.state;
     return (
       <div>
         <h1>Restaurants</h1>
