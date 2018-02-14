@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NewRestaurantForm from './NewRestaurantForm';
 import restaurants from './restaurants.json';
 
 class App extends Component {
@@ -15,8 +16,8 @@ class App extends Component {
     this.setState({ newRestaurantName: event.target.value });
   }
 
-  addRestaurant() {
-    const { restaurants, newRestaurantName } = this.state;
+  addRestaurant(newRestaurantName) {
+    const { restaurants } = this.state;
     const newRestaurant = { name: newRestaurantName };
     const updatedRestaurants = [newRestaurant, ...restaurants];
     this.setState({
@@ -30,20 +31,9 @@ class App extends Component {
     return (
       <div>
         <h1>Restaurants</h1>
-        <div>
-          <input
-            type="text"
-            data-test="newRestaurantName"
-            value={newRestaurantName}
-            onChange={e => this.updateRestaurantName(e)}
-          />
-          <button
-            data-test="saveButton"
-            onClick={() => this.addRestaurant()}
-          >
-            Add Restaurant
-          </button>
-        </div>
+        <NewRestaurantForm
+          onSave={restaurant => this.addRestaurant(restaurant)}
+        />
         <ul>
           {
             restaurants.map(r =>
