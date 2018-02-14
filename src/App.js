@@ -7,16 +7,51 @@ class App extends Component {
 
     this.state = {
       restaurants: restaurants,
+      newRestaurantName: '',
     };
   }
 
+  updateRestaurantName(event) {
+    this.setState({ newRestaurantName: event.target.value });
+  }
+
+  addRestaurant() {
+    const { restaurants, newRestaurantName } = this.state;
+    const newRestaurant = { name: newRestaurantName };
+    const updatedRestaurants = [newRestaurant, ...restaurants];
+    this.setState({
+      restaurants: updatedRestaurants,
+      newRestaurantName: '',
+    });
+  }
+
   render() {
-    const { restaurants } = this.state;
+    const { restaurants, newRestaurantName } = this.state;
     return (
       <div>
         <h1>Restaurants</h1>
+        <div>
+          <input
+            type="text"
+            data-test="newRestaurantName"
+            value={newRestaurantName}
+            onChange={e => this.updateRestaurantName(e)}
+          />
+          <button
+            data-test="saveButton"
+            onClick={() => this.addRestaurant()}
+          >
+            Add Restaurant
+          </button>
+        </div>
         <ul>
-          { restaurants.map(r => <li>{ r.name }</li>) }
+          {
+            restaurants.map(r =>
+              <li key={r.name}>
+                { r.name }
+              </li>
+            )
+          }
         </ul>
       </div>
     );
