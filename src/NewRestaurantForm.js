@@ -13,6 +13,10 @@ export default class NewRestaurantForm extends Component {
     this.setState({ newRestaurantName: event.target.value });
   }
 
+  handleClick() {
+    this.setState({ newRestaurantName: '' });
+  }
+
   render() {
     const { newRestaurantName } = this.state;
     return (
@@ -25,6 +29,7 @@ export default class NewRestaurantForm extends Component {
         />
         <button
           data-test="saveButton"
+          onClick={() => this.handleClick()}
         >
           Add Restaurant
         </button>
